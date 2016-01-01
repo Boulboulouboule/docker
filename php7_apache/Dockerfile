@@ -6,10 +6,11 @@ MAINTAINER Boulboulouboule <boulboulouboule@gmail.com
 
 #Install git, xdebug and php extensions
 RUN apt-get update && apt-get install -y zlib1g-dev git libicu-dev\
-    && pecl install xdebug-2.4.0RC3
+    && pecl install xdebug-2.4.0RC3 \
     && docker-php-ext-install zip \
     && docker-php-ext-install intl \
-    && docker-php-ext-install opcache
+    && docker-php-ext-install opcache \
+    && docker-php-ext-install pdo pdo_mysql
 
 # Set up composer variables
 ENV COMPOSER_BINARY=/usr/local/bin/composer \

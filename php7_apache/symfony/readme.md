@@ -1,4 +1,4 @@
-# Here is a container containing PHP7 and all the symfony essential php extensions
+# PHP7 and all the symfony essential php extensions
 
 ## How to use it ?
 
@@ -20,6 +20,8 @@ The command above abstract the command below (dock.sh)
 
 ## Create a new project
 
+*The symfony installer is installed on the container*
+
 > $ ``symfony new project_name``
 
 The command above abstract the command below (symfony.phar)
@@ -28,7 +30,7 @@ The command above abstract the command below (symfony.phar)
 
 ## Run the project on the port 8000
 
-And then, cd into th project folder and launch it
+And then, cd into the project folder and launch it
 
 > $ ``cd project_name``
 
@@ -38,8 +40,8 @@ The command above abstract the command below (symfony.sh and .bashrc)
 
 > $ ``php bin/console server:run 0.0.0.0:8000``
 
-You can now see your app running on 192.168.99.100:8000 :)
+You can now see your app running on $your_docker_ip:8000 :)
 
 ## Symfony configuration
 
-To see the /config.php runing on your server, add your docker-machine ip (see the root readme) in the web/config.php file
+To see the /config.php runing on your server, add your docker-machine ip (see the php7_apache/readme.md) in the web/config.php file

@@ -28,6 +28,6 @@ Or, if you need more infos:
 
 default is the default name of a docker machine.
 
-You can find the docker-machine installed on your computer by typing the following command
+You can find the docker-machine active on your computer by typing the following command
 
-> ``docker-machine ls``
+> ``docker-machine active``

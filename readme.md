@@ -35,11 +35,27 @@
 
 *The ohers commands :*
 
-> $ ``dock build``
+Stop the container
+
 > $ ``dock stop``
+
+Start the stopped container
+
 > $ ``dock start``
+
+Remove the stopped container
+
 > $ ``dock remove``
-***All the commands are working automatically on the name of your doker container. The only things you have to do is add this name manually in th dock . sh file, like that :***
+
+/!\ Remove all containers
+
+> $ ``dock rmall``
+
+Remove all exited containers
+
+> $ ``dock rmexited``
+
+***All the commands are working automatically on the name of your doker container. The only thing you have to do is add this name manually in th dock . sh file, like that :***
 
 *dock . sh* :
 > ``CONTAINER_NAME="my_container_name"``
