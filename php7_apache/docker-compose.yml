@@ -1,0 +1,11 @@
+web:
+  extends:
+    file: docker-root.yml
+    service: web
+  links:
+    - db
+
+db:
+  extends:
+    file: docker-root.yml
+    service: db

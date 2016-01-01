@@ -1,0 +1,17 @@
+web:
+  extends:
+    file: ../docker-root.yml
+    service: web
+  ports:
+    - "8000:8000"                     # the symfony app port
+  volumes:
+    - ./symfony.phar:/usr/bin/symfony #symfony installer
+    - ./bashrc:/root/.bashrc          #shell aliasses
+    - ./symfony.sh:/root/symfony.sh   #symfony bind command
+  links:
+    - db
+
+db:
+  extends:
+    file: ../docker-root.yml
+    service: db

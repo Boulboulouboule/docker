@@ -1,0 +1,20 @@
+web:
+  build: .
+  dockerfile: Dockerfile
+  restart: always
+  ports:
+    - "8080:80"
+  volumes:
+    - ./config/php/php.ini:/usr/local/etc/php/conf.d/30-custom.ini
+    - ./config/apache:/etc/apache2/sites-enabled
+    - ../../Sites:/var/www/html
+
+db:
+  image: mysql
+  ports:
+    - "3306:3306"
+  environment:
+    - "MYSQL_ROOT_PASSWORD=root"
+    - "MYSQL_USER=admin"
+    - "MYSQL_PASSWORD=admin"
+    - "MYSQL_DATABASE=my_database_name"
