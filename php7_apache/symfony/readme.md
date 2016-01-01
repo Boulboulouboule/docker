@@ -4,9 +4,9 @@
 
 > $ ``docker-compose up -d ``**here to start it**
 
-And then connect to 192.168.99.100:8080 to see the result !
+And then connect to $your_docker_ip:8080 to see the result !
 
-It links the c:/Users/Vincent/Develop/Sites folder to the root of the server
+*By default, it links the ../../Sites folder to the root of the server, but you can chage it in the ../docker-root.yml file*
 
 # Run a symfony app in a docker environment
 
@@ -42,4 +42,4 @@ You can now see your app running on 192.168.99.100:8000 :)
 
 ## Symfony configuration
 
-To see the /config.php runing on your server, add your docker-machine ip (192.168.99.1) in the web/config.php file
+To see the /config.php runing on your server, add your docker-machine ip (see the root readme) in the web/config.php file
