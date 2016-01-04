@@ -14,6 +14,8 @@
 
   -Opcache
 
+  -MySQL
+
 ## nodejs directory
 
 ***Soon there will be some nodejs containers here***
@@ -28,6 +30,10 @@
 ***Contains some shortcuts that will help you with the docker commands like :***
 
 > $ ``dock bash``
+
+Or, if you want to bash into another container thaht the one set in the dock.sh file
+
+> $ ``dock bash $CONTAINER_NAME``
 
 *Is the command for:*
 

@@ -11,10 +11,13 @@ web:
 
 db:
   image: mysql
-  ports:
-    - "3306:3306"
   environment:
     - "MYSQL_ROOT_PASSWORD=root"
-    - "MYSQL_USER=admin"
-    - "MYSQL_PASSWORD=admin"
-    - "MYSQL_DATABASE=my_database_name"
+    - "MYSQL_DATABASE=my_database"
+
+adminer:
+  image: clue/adminer
+  links:
+    - db
+  ports:
+    - "3306:80"

@@ -1,23 +1,21 @@
 web:
-  build: .
-  dockerfile: Dockerfile
   restart: always
-  # image: php:7.0-apache
+  image: drupal:7
   ports:
     - "8080:80"
   volumes:
-    - ../config/php/30-custom.ini:/usr/local/etc/php/conf.d/30-custom.ini
+    - ../config/php/php.ini:/usr/local/etc/php/conf.d/30-custom.ini
     - ../config/apache:/etc/apache2/sites-enabled
-    - ../../Sites:/var/www/html
+    - ../../Sites:/var/www/html/sites # Drupal sites folder
   links:
     - db
 
 db:
-  image: mysql
-  ports:
-    - "3306:3306"
-  environment:
-    - "MYSQL_ROOT_PASSWORD=root"
-    - "MYSQL_USER=admin"
-    - "MYSQL_PASSWORD=admin"
-    - "MYSQL_DATABASE=photofolio"
+  extends:
+    file: ../docker-root.yml
+    service: db
+
+adminer:
+  extends:
+    file: ../docker-root.yml
+    service: adminer
