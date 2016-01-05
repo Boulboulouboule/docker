@@ -13,8 +13,13 @@ log() {
 }
 
 bash() {
-  log "BASH into $CONTAINER_NAME"
-  docker exec -ti $CONTAINER_NAME bash
+  if [[ $1 ]]; then
+    log "BASH into $1"
+    docker exec -ti $1 bash
+  else
+    log "BASH into $CONTAINER_NAME"
+    docker exec -ti $CONTAINER_NAME bash
+  fi
 }
 
 stop() {

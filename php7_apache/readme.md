@@ -1,4 +1,4 @@
-# Container PHP7 + APACHE
+# Container PHP7 that just work :)
 
 **Contains some usefull extensions like :**
 
@@ -14,7 +14,9 @@
 
 ## How to use it ?
 
-> $ `docker-compose up` *here to start it*
+### Start the container
+
+> $ `docker-compose up` *in this folder to start it*
 
 **And then connect to $DOCKER_MACHINE_IP:8080 to see the result !**
 
@@ -31,3 +33,23 @@ default is the default name of a docker machine.
 You can find the docker-machine active on your computer by typing the following command
 
 > ``docker-machine active``
+
+### Connect to MySQL using adminer
+
+***First, find the ip of your mysql container by pinging it from a linked container.***
+
+> ``dock bash your_php_or_adminer_container``
+
+> ``ping your_mysql_container``
+
+Mine is 172.17.0.4 for example
+
+***Then, go to your adminer homepage and conect to mysql***
+
+Adminer homepage : http://$DOCKER_MACHINE_IP:3306/
+
+Host : 172.17.0.4
+
+User : root
+
+Password : your_root_password
