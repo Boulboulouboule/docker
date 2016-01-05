@@ -7,7 +7,7 @@ web:
   volumes:
     - ./config/php/php.ini:/usr/local/etc/php/conf.d/30-custom.ini
     - ./config/apache:/etc/apache2/sites-enabled
-    - ../../Sites:/var/www/html
+    # - ../../Sites:/var/www/html
 
 db:
   image: mysql
@@ -17,7 +17,5 @@ db:
 
 adminer:
   image: clue/adminer
-  links:
-    - db
   ports:
     - "3306:80"

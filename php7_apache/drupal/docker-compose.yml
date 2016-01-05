@@ -6,7 +6,7 @@ web:
   volumes:
     - ../config/php/php.ini:/usr/local/etc/php/conf.d/30-custom.ini
     - ../config/apache:/etc/apache2/sites-enabled
-    - ../../Sites:/var/www/html/sites # Drupal sites folder
+    - ../../Sites/Drupal/themes:/var/www/html/sites/all/themes # Drupal sites folder
   links:
     - db
 
@@ -19,3 +19,5 @@ adminer:
   extends:
     file: ../docker-root.yml
     service: adminer
+  links:
+    - db

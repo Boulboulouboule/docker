@@ -4,6 +4,8 @@ web:
     service: web
   links:
     - db
+  volumes:
+      - ../../Sites:/var/www/html
 
 db:
   extends:
