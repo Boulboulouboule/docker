@@ -8,6 +8,7 @@ web:
     - ./symfony.phar:/usr/bin/symfony #symfony installer
     - ./bashrc:/root/.bashrc          #shell aliasses
     - ./symfony.sh:/root/symfony.sh   #symfony bind command
+    - ./config/config.php:/var/www/html/test/config.php
   links:
     - db
 
