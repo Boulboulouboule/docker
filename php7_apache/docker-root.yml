@@ -17,5 +17,7 @@ db:
 
 adminer:
   image: clue/adminer
+  volumes:
+    - ./config/adminer/adminer.css:/var/www/adminer.css
   ports:
     - "3306:80"
